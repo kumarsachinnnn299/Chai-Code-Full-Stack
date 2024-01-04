@@ -38,7 +38,7 @@ const myFunction=function(){
 }
 
 // to find datatype of something
-console.log(typeof outsideTemp);
+console.log(typeof outsideTemp,'\n');
 //typeof kya dega 
 /*
 Undefined	"undefined"
@@ -51,3 +51,28 @@ Symbol	"symbol"
 Function (implements [[Call]] in ECMA-262 terms; classes are functions as well)	"function"
 Any other object	"object"
 */
+
+
+
+//*********************************************************************************************
+//Primitive dataype(Stack Memory) : Yha har variable ki copy bnti h , Non-Primitive datatypes(Heap Memory): yha har variable ka reference milta h
+
+let myName="Sachin"
+let anotherName=myName
+console.log(myName);
+console.log(anotherName);
+anotherName="Rahul"
+console.log(myName);
+console.log(anotherName,'\n');
+
+
+let user1={
+    email:"user@gmail.com",
+    age:66
+}
+
+let user2=user1
+user2.email="sachin@gmail.com"
+
+console.log(user1.email);
+console.log(user2.email);
