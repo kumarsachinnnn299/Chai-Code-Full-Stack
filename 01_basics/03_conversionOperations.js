@@ -74,5 +74,48 @@ let no1ToString=String(no1)
 console.log(no1)
 console.log(typeof no1);
 console.log(no1ToString);
-console.log(typeof no1ToString)
+console.log(typeof no1ToString,'\n')
 
+
+//***************************************** Operations *********************************
+let value=3
+let negValue=-value
+console.log(negValue,'\n');
+
+// console.log(2+2);
+// console.log(2-2);
+// console.log(2/2);
+// console.log(2*2);
+// console.log(2**3);//Power k liye ye h JS m
+// console.log(2%2);
+
+let str1="Hello"
+let str2=" Sachin"
+let str3=str1+str2
+console.log(str3,'\n');
+
+//Tricky things
+//Refer here: https://www.youtube.com/watch?v=OeVE-8CIzys
+//Study link: https://tc39.es/ecma262/multipage/abstract-operations.html
+
+/*Isme bas itna samjh lo ki agar string pehle h to sab string m ho jayega convert 
+and agar last m h string to start m jo h usme ho jayega convert*/
+console.log(1+"2")
+console.log(typeof (1+"2"));
+console.log("1"+2)
+console.log(typeof ("1"+2));
+console.log("1"+2+2)
+console.log(typeof ("1"+2+2));
+console.log(1+2+"2")
+console.log(typeof (1+2+"2"));
+
+console.log(true);
+console.log(+true);//iska one isliye aaya kyuki + ki wajah se true boolean se number m convert ho gya
+// console.log(true+);  ye error dega
+console.log(+"");
+
+//Some points about assignment operator
+
+let n1,n2,n3;
+n1=n2=n3=2+2//not a good practice
+console.log(n1,n2,n3)
