@@ -41,3 +41,39 @@ console.log(Object.entries(tinderUser));//will give array of each key value pair
 
 //To check if any value exist
 console.log(tinderUser.hasOwnProperty('isLoggedIn'));
+
+//Destructuring an object
+
+const course={
+    coursename:"JS in HIndi",
+    price:999,
+    teacher:"Hitesh Chaudhary"
+}
+
+//to extract values
+//1st way: course.teacher
+
+//2nd way
+
+const {teacher}=course
+console.log(teacher);
+//ise hum apna naam bhi de skte h
+
+const {teacher: masterji}=course
+console.log(masterji);
+
+/*
+
+    Format of Json: It is JS object it self
+    {}-> this is json
+    
+    {
+
+        "name":"Sachin",
+        "Age":22
+    }
+
+    in JSOn: keys are strings
+    values can be string, or other
+
+*/
