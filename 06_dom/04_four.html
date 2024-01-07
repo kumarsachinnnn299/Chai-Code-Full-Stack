@@ -1,0 +1,56 @@
+<!-- Adding , editing and removing values in DOM thorough JS -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Chai or Code</title>
+</head>
+<body style="background-color: #212121;color: #ffff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+
+<script>
+
+//ADDING values
+    //Ye tareeka thoda less optimised as here we have to go through the entire doc tree each time and it is time consuming 
+    function addLanguage(langName){
+        const listitem=document.createElement('li')
+        listitem.innerHTML=`${langName}`;//this line i.e innerHTML is less optimised
+        document.querySelector('.language').appendChild(listitem)
+    }
+    addLanguage("Java")
+    addLanguage("Typescipt")
+
+    //more optimised way
+    function addLanguageOptimised(language)
+    {
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(language));//this is nbetter than using innerHtml to set content
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguageOptimised("Python")
+
+    //Editing values
+    const secondlang=document.querySelector("li:nth-child(2)")
+    // secondlang.innerHTML="Mojo" => this approach works but is less optimised
+    const newli=document.createElement("li")
+    newli.appendChild(document.createTextNode("New Language"))
+    // newli.textContent="New Language" => another way by using inner text
+    secondlang.replaceWith(newli)
+
+    //Editing values: another way
+    const firstLang=document.querySelector('li:first-child')
+    firstLang.outerHTML="<li>Another Edited Value</li>"
+
+    //remove
+    const lastlang=document.querySelector("li:last-child")
+    // lastlang.remove()
+
+
+</script>
+
+</html>

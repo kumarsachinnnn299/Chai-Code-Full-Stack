@@ -1,0 +1,46 @@
+<!-- To see this code: run in live server and then inspect and see console . Main code is in the Script tag that 
+we have to see -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM with CHai and Code</title>
+</head>
+<body style="background-color: #212121;color: #ffff;">
+    <div class="parent" >
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent=document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children);//This will give HTML collection of all children of a prent class
+    console.log(parent.children[1]);
+    console.log(parent.children[1].innerHTML);
+
+    for (let index = 0; index < parent.children.length; index++) {
+        console.log(parent.children[index].innerHTML);
+        
+    }
+
+    parent.children[1].style.color="orange"
+    console.log(parent.firstElementChild);
+    console.log(parent.lastElementChild);
+
+    //to go from child to parent
+    const dayOne=document.querySelector('.day')//will give first element with day class 
+    console.log(dayOne);
+    //now to go to dayOne parent element
+    console.log(dayOne.parentElement);
+    //Getting sibling
+    console.log(dayOne.nextElementSibling);
+
+    //To get all nodes
+    console.log("Nodes: ", parent.childNodes);//will give nodelist
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!-- Creating element in DOM by JS -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai or Code</title>
+</head>
+<body style="background-color: #212121;color: #ffff;">
+    
+</body>
+<script>
+
+    const div=document.createElement('div')
+    console.log(div);
+    div.className="main"
+    div.id=Math.floor(Math.random()*10+1)
+    //to set other attributes
+    div.setAttribute("title","generated title")
+
+    //styling
+    div.style.backgroundColor="green"
+    div.style.padding="12px"
+
+    //to add some content in div
+
+    // div.innerText="Chai and Code" -> way 1
+    //way 2
+    const addText=document.createTextNode("Chai aur Code")
+    div.appendChild(addText)
+    /*prefer set attribute rather than innerText to add content because
+    .innertext pehle value ko laata h or fir override krta h kisi element pr but setAttribute seedhe whi value set krta h
+    to ek round trip bchti h
+    */
+
+   //Abhi yha tak ye sab bas memory m hoga ye page par display nhi hoga. Hme ise page par show krane k liye \
+   //attach krna hoga
+   document.body.appendChild(div)
+
+</script>
+
+</html>
