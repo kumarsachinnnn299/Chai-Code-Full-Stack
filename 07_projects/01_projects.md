@@ -79,3 +79,16 @@ form.addEventListener('submit', function (e) {
 
 
 ```
+
+## Project 3  : Digital Clock
+
+```JavaScript
+  const clockbody = document.querySelector('#clock');
+//for conitunously runnig of clock
+setInterval(function () {
+  let dateObj = new Date();
+  let time = dateObj.toLocaleTimeString();
+  console.log(time);
+  clockbody.innerHTML = `<span>${time}</span>`;
+}, 1000); //ye ek method lega use ek interval pe continuously chlata rhega, 1000 millisecond h that is 1 second
+```
