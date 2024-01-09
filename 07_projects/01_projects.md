@@ -184,3 +184,34 @@ function newGame() {
 }
 
 ```
+
+## Project 5  : Color Changer Game
+```JavaScript
+//Generate random color
+
+const randomColor = function () {
+  const hexCode = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hexCode[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+let intervalId;
+const startChangeColor = function () {
+  console.log('Inside colorchange start fn');
+  if (!intervalId) intervalId = setInterval(changecolor, 500);
+  function changecolor() {
+    document.body.style.backgroundColor = randomColor();
+  }
+};
+const stopChangeColor = function () {
+  clearInterval(intervalId);
+  intervalId = null;
+  console.log('Inside colorchange stop fn');
+};
+
+document.querySelector('#start').addEventListener('click', startChangeColor);
+document.querySelector('#stop').addEventListener('click', stopChangeColor);
+
+```
