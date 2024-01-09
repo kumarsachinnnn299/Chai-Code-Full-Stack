@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chain aur Javascritp</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+    //Using setInterval
+    const sayDate=function(str){
+        console.log(str);
+        console.log(Date.now());
+    }
+
+ 
+    
+    document.querySelector('#start').addEventListener('click',()=>{
+        const intervalId=setInterval(sayDate,2000,"Sachin")
+
+        document.querySelector('#stop').addEventListener('click',()=>{
+            clearInterval(intervalId)   
+        })
+    })
+
+   
+</script>
+
+</html>

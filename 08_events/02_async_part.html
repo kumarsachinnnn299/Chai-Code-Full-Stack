@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chain aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+    //See some asynchronous functions
+    //1) setTimeout //These are not part of Core JS. They are run through APIs  
+    setTimeout(()=>{// ye fn basically ek time bad kuch cheej execute krta h bas ek bar. It take a handler as event. Handler are nothing
+                    // just fn without name. It is not necessary that handlers are always without names. Similar to callback fn
+        console.log("Sachin");
+    },2000)
+
+    //ex 2
+    const changeText=function(){
+        document.querySelector('h1').innerHTML="Best JS Series"
+    }
+
+    setTimeout(changeText , 2000);//Another way by passing the reference of handler fn
+
+    //2) ye ek interval ek kam continuously krta rhega
+    let c=0
+    setInterval(() => {
+        console.log(c);
+        c++
+    }, 2000);
+
+    //3) clearTimeout() => used to stop a setTimeout. It takes the refernce of the setTimout
+    const addName=function()
+    {
+        document.querySelector('body').innerHTML+="<h1>Sachin</h1>"
+    }
+    const toStop=setTimeout(addName, 2000);
+    // clearTimeout(toStop)   normal
+
+    //we will apply this clearTimer with click event. Hmne stop wale button se mere name add hone wala event rok diya
+
+    document.querySelector('#stop').addEventListener('click',()=>{
+        clearInterval(toStop)
+        console.log('Stopped');
+    },false)
+
+
+</script>
+
+</html>
