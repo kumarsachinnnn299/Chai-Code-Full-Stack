@@ -157,3 +157,7 @@ getAllUser()
 
 //Note: point to remeber ki ye laast wale promse ka data itna time lene k baad bhi sabse pehle print hua and upar k code ka
 //response baad m. Why: see next files or video
+
+//Reson whi h ki jab hmne JS ka diagram pdha tha to usme jab hmne synchronous fn call k dekha tha ki wo stack se call hote h
+//fir register call back se hoke task queue m fir se aate h. Fetch bhi same hi tareeke se kam krta h but ye register call bacl
+//k baad ek special queue m aate h i.e priority queue. And wo call stack m sabse pehle aayega. And sabse pehle result ayega
