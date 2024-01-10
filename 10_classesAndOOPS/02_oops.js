@@ -48,7 +48,7 @@ console.log(user1.constructor);//so constructor property is nothing but a refere
 //another operator : instanceOf: to check whether an instances is of some particular class or not 
 
 /*
-Strps of constructor fn:
+Steps of constructor fn: new keyword behind the scene krta kya h
 1) firstly an empty object is created. it is called instance
 2) Constructor fn is called due to new keyword and it packs all the arguements given to it
 3) all these packed arguements are injected in this keword or the empty object
