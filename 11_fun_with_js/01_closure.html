@@ -1,0 +1,67 @@
+<!-- 
+    Link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+
+    A closure is the combination of a function bundled together (enclosed) with references to its surrounding 
+    state (the lexical environment). In other words, a closure gives you access to an outer function's scope 
+    from an inner function. In JavaScript, closures are created every time a function is created, at function 
+    creation time.
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure Chai</title>
+  </head>
+  <body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+  </body>
+
+  <script>
+    function init() {
+      let name = "Mozilla"; // name is a local variable created by init
+      function displayName() {
+        // displayName() is the inner function, that forms the closure
+        console.log(name); // use variable declared in the parent function
+      }
+      displayName();
+    }
+    init();
+
+    //Lexical scoping : inner fn declared inside an outer fn can access the data members of outer fn
+
+    //Closure: bascially isme hmne outer fn m inner fn call nhi kiya h hmne use return kiya h. Normally kya hota ki nye fn call m
+    // nya fn ka execution context bnta or usme wo bahar wale fn k execution context and variables ko access
+    //nhi krr pata. But Ab isme aesa nhi h. Isme  Due to lexical scoping, and memory sharing return m inner fn k saath outer fn ka
+    //lexocal scope bhi jayega and ye inner fn outer fn k variables ko access bhi krr skte h
+    function makeFunc() {
+      const name = "Mozilla";
+      function displayName() {
+        console.log(name);
+      }
+      return displayName;
+    }
+
+    const myFunc = makeFunc();
+    myFunc();
+  </script>
+
+
+<!-- Example of where problem comes without closure and lexical scoping -->
+  <script>
+    //Use of lexical scope and closure
+    function clickhandler(color) {
+      // document.body.style.backgroundColor=color: agar isko direct likh denge to pehle se hi orange ya green ho jayega without clicking
+
+      return function () {
+        document.body.style.backgroundColor = color;
+      };
+    }
+
+    document.getElementById("orange").onclick = clickhandler("orange");
+    document.getElementById("green").onclick = clickhandler("green");
+  </script>
+</html>
