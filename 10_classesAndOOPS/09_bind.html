@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+        <button>Button Clicked</button>
+</body>
+
+<script>
+    class React{
+        constructor(){
+            this.library="React"
+            this.server="https://localhost:300"
+
+            //Requirement: Jese hi page load ho ek object bn jaaye react ka and ye upar jo button h uska reference mil jaaye
+            //and ek mothod ho handleclick jo kcuh msg de "button is clicked or form is received"
+
+            // document.querySelector('button').addEventListener('click',this.handleClick) => ye iske pas this ka 
+            //access to h but ye server ko access nhi krr paa rha to hme bind krna pdega on code where we have added event listnere 
+            document.querySelector('button').addEventListener('click',this.handleClick.bind(this))
+        }
+        handleClick(){
+            console.log("Button clicked");
+            console.log(this.server); 
+        }
+
+    }
+    const app=new React()
+</script>
+
+</html>
